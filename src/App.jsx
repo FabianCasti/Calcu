@@ -19,7 +19,7 @@ function App() {
       case "Multiply":
         return parseFloat(nro1) * parseFloat(nro2);
 
-      case "Divide":
+      case "Divide": 
         return parseFloat(nro1) / parseFloat(nro2);
 
       default:
@@ -33,23 +33,23 @@ function App() {
 
   return (
     <div className="container">
-      <div className="form__title">
+      <div className="form-title">
         <h4>Calculator</h4>
       </div>
-      <div className="form__container">
-        <div className="form__group">
-          <label className="form__label">Number 1</label>
+      <div className="form-container">
+        <div className="form-group">
+          <label className="form-label">Number 1</label>
           <input
-            className="form__input"
+            className="form-input"
             type="number"
             value={nro1}
             onChange={(event) => setNro1(event.target.value)}
           />
         </div>
-        <div className="form__group">
-          <label className="form__label">Number 2</label>
+        <div className="form-group">
+          <label className="form-label">Number 2</label>
           <input
-            className="form__input"
+            className="form-input"
             type="number"
             value={nro2}
             onChange={(event) => setNro2(event.target.value)}
@@ -57,11 +57,11 @@ function App() {
         </div>
       </div>
 
-      <div className="container__operaciones">
+      <div className="container-operaciones">
         <div>
-          <label className="label__operations">Operations</label>
+          <label className="label-operations">Operations</label>
         </div>
-        <div className="select__options">
+        <div className="select-options">
           <select
             className="select"
             onChange={(event) => setOperation(event.target.value)}
@@ -75,10 +75,10 @@ function App() {
         </div>
 
         <div>
-          <div className="label__result">
+          <div className="label-result">
             <label>Result</label>
           </div>
-          <label className="label__result">{result}</label>
+          <label className="label-result">{result}</label>
         </div>
       </div>
     </div>

@@ -34,23 +34,23 @@ body {
   text-align: center;
 }
 
-.form__title {
+.form-title {
   font-size: 2rem;
   margin-bottom: 0.5em;
 }
 
-.form__container{
+.form-container{
    margin: 2em; 
    display: grid;
    gap: 2.5em;
 }
 
-.form__group{
+.form-group{
    position: relative;
    --color:#5757577e;
 }
 
-.form__input{
+.form-input{
    width: 100%;
    background: none;
    color: #786c6c;
@@ -62,12 +62,12 @@ body {
    text-align: center;
 }
 
-.form__input:focus + .form__label{
+.form-input:focus + .form-label{
     transform: translateY(-12px) scale(.7);
     transform-origin: left top;
 }
 
-.form__label{
+.form-label{
    color:  var(black);
    position:absolute;   
    transform: translateY(-12px); 
