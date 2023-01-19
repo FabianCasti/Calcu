@@ -66,7 +66,7 @@ function App() {
             className="select"
             onChange={(event) => setOperation(event.target.value)}
           >
-            <option disabled="true" selected="true"></option>
+            <option disabled="true" selected="true">Options</option>
             <option>Sum</option>
             <option>Subtract</option>
             <option>Multiply</option>
