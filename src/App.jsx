@@ -6,56 +6,66 @@ function App() {
   const [nro1, setnro1] = useState(0);
   const [nro2, setnro2] = useState(0);
   const [result, setResult] = useState(0);
-  const [operacion, setoperacion] = useState("Sumar");
+  const [operation, setoperation] = useState("Sum");
 
-  const calcular = () => {
-    if (operacion === "Sumar") return parseFloat(nro1) + parseFloat(nro2);
-    else if (operacion === "Restar") return parseFloat(nro1) - parseFloat(nro2);
-    else if (operacion === "Multiplicar")
+  const calculator = () => {
+    if (operation === "Sum") return parseFloat(nro1) + parseFloat(nro2);
+    else if (operation === "Subtract")
+      return parseFloat(nro1) - parseFloat(nro2);
+    else if (operation === "Multiply")
       return parseFloat(nro1) * parseFloat(nro2);
     else return parseFloat(nro1) / parseFloat(nro2);
   };
 
   useEffect(() => {
-    setResult(calcular());
-  }, [nro1, nro2, operacion]);
+    setResult(calculator());
+  }, [nro1, nro2, operation]);
 
   return (
     <div className="Container">
       <div className="FormTitle">
-        <h4>Calculara</h4>
+        <h4>Calculator</h4>
       </div>
       <div className="FormContainer">
         <div className="FormGroup">
-          <label className="FormLabel">Numero 1</label>
+          <label className="FormLabel">Number 1</label>
           <input
             className="FormInput"
             type="number"
             value={nro1}
-            onChange={(e) => setnro1(e.target.value)}
+            onChange={(event) => setnro1(event.target.value)}
           />
         </div>
         <div className="FormGroup">
-          <label className="FormLabel">Numero 2</label>
+          <label className="FormLabel">Number 2</label>
           <input
             className="FormInput"
             type="number"
             value={nro2}
-            onChange={(e) => setnro2(e.target.value)}
+            onChange={(event) => setnro2(event.target.value)}
           />
         </div>
       </div>
 
       <div className="ContainerOperaciones">
-        <label className="FormLabel">Operaciones</label>
+        <div>
+          <label className="LabelOperations">Operations</label>
+        </div>
+        <div className="SlectOptions">
+          <select onChange={(event) => setoperation(event.target.value)}>
+            <option>Sum</option>
+            <option>Subtract</option>
+            <option>Multiply</option>
+            <option>Divide</option>
+          </select>
+        </div>
 
-        <select onChange={(e) => setoperacion(e.target.value)}>
-          <option>Sumar</option>
-          <option>Restar</option>
-          <option>Multiplicar</option>
-          <option>Dividir</option>
-        </select>
-        <label>Resultado {result}</label>
+        <div>
+          <div className="LabelResult">
+            <label>Result</label>
+          </div>
+          <label className="LabelResult">{result}</label>
+        </div>
       </div>
     </div>
   );
