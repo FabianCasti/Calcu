@@ -40,7 +40,7 @@ body {
 }
 
 .FormContainer{
-   margin: 3em; 
+   margin: 2em; 
    display: grid;
    gap: 2.5em;
 }
@@ -72,6 +72,10 @@ body {
    position:absolute;   
    transform: translateY(-12px); 
   
+}
+.Select{
+  text-align: center;
+  margin: 5%;
 }
 
 

@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 import "./style/Pag.css";
 
 function App() {
-  const [nro1, setnro1] = useState(0);
-  const [nro2, setnro2] = useState(0);
+  const [nro1, setNro1] = useState(0);
+  const [nro2, setNro2] = useState(0);
   const [result, setResult] = useState(0);
-  const [operation, setoperation] = useState("Sum");
+  const [operation, setOperation] = useState("Sum");
 
   const calculator = () => {
     if (operation === "Sum") return parseFloat(nro1) + parseFloat(nro2);
@@ -33,7 +33,7 @@ function App() {
             className="FormInput"
             type="number"
             value={nro1}
-            onChange={(event) => setnro1(event.target.value)}
+            onChange={(event) => setNro1(event.target.value)}
           />
         </div>
         <div className="FormGroup">
@@ -42,7 +42,7 @@ function App() {
             className="FormInput"
             type="number"
             value={nro2}
-            onChange={(event) => setnro2(event.target.value)}
+            onChange={(event) => setNro2(event.target.value)}
           />
         </div>
       </div>
@@ -52,7 +52,10 @@ function App() {
           <label className="LabelOperations">Operations</label>
         </div>
         <div className="SlectOptions">
-          <select onChange={(event) => setoperation(event.target.value)}>
+          <select
+            className="Select"
+            onChange={(event) => setOperation(event.target.value)}
+          >
             <option>Sum</option>
             <option>Subtract</option>
             <option>Multiply</option>
