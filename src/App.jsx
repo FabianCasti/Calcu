@@ -3,43 +3,53 @@ import { useState, useEffect } from "react";
 import "./style/Pag.css";
 
 function App() {
-  const [nro1, setNro1] = useState(0);
-  const [nro2, setNro2] = useState(0);
+  const [nro1, setNro1] = useState();
+  const [nro2, setNro2] = useState();
   const [result, setResult] = useState(0);
-  const [operation, setOperation] = useState("Sum");
+  const [operation, setOperation] = useState("");
 
   const calculator = () => {
-    if (operation === "Sum") return parseFloat(nro1) + parseFloat(nro2);
-    else if (operation === "Subtract")
-      return parseFloat(nro1) - parseFloat(nro2);
-    else if (operation === "Multiply")
-      return parseFloat(nro1) * parseFloat(nro2);
-    else return parseFloat(nro1) / parseFloat(nro2);
+    switch (operation) {
+      case "Sum":
+        return parseFloat(nro1) + parseFloat(nro2);
+
+      case "Subtract":
+        return parseFloat(nro1) - parseFloat(nro2);
+
+      case "Multiply":
+        return parseFloat(nro1) * parseFloat(nro2);
+
+      case "Divide":
+        return parseFloat(nro1) / parseFloat(nro2);
+
+      default:
+        return "";
+    }
   };
 
   useEffect(() => {
     setResult(calculator());
-  }, [nro1, nro2, operation]);
+  });
 
   return (
-    <div className="Container">
-      <div className="FormTitle">
+    <div className="container">
+      <div className="form__title">
         <h4>Calculator</h4>
       </div>
-      <div className="FormContainer">
-        <div className="FormGroup">
-          <label className="FormLabel">Number 1</label>
+      <div className="form__container">
+        <div className="form__group">
+          <label className="form__label">Number 1</label>
           <input
-            className="FormInput"
+            className="form__input"
             type="number"
             value={nro1}
             onChange={(event) => setNro1(event.target.value)}
           />
         </div>
-        <div className="FormGroup">
-          <label className="FormLabel">Number 2</label>
+        <div className="form__group">
+          <label className="form__label">Number 2</label>
           <input
-            className="FormInput"
+            className="form__input"
             type="number"
             value={nro2}
             onChange={(event) => setNro2(event.target.value)}
@@ -47,15 +57,16 @@ function App() {
         </div>
       </div>
 
-      <div className="ContainerOperaciones">
+      <div className="container__operaciones">
         <div>
-          <label className="LabelOperations">Operations</label>
+          <label className="label__operations">Operations</label>
         </div>
-        <div className="SlectOptions">
+        <div className="select__options">
           <select
-            className="Select"
+            className="select"
             onChange={(event) => setOperation(event.target.value)}
           >
+            <option disabled="true" selected="true"></option>
             <option>Sum</option>
             <option>Subtract</option>
             <option>Multiply</option>
@@ -64,10 +75,10 @@ function App() {
         </div>
 
         <div>
-          <div className="LabelResult">
+          <div className="label__result">
             <label>Result</label>
           </div>
-          <label className="LabelResult">{result}</label>
+          <label className="label__result">{result}</label>
         </div>
       </div>
     </div>

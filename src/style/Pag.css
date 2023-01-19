@@ -23,7 +23,7 @@ body {
   min-height: 100vh;
 }
 
-.Container {
+.container {
   background-color: white;
   margin: auto;
   width: 90%;
@@ -34,23 +34,23 @@ body {
   text-align: center;
 }
 
-.FormTitle {
+.form__title {
   font-size: 2rem;
   margin-bottom: 0.5em;
 }
 
-.FormContainer{
+.form__container{
    margin: 2em; 
    display: grid;
    gap: 2.5em;
 }
 
-.FormGroup{
+.form__group{
    position: relative;
    --color:#5757577e;
 }
 
-.FormInput{
+.form__input{
    width: 100%;
    background: none;
    color: #786c6c;
@@ -62,18 +62,18 @@ body {
    text-align: center;
 }
 
-.FormInput:focus + .FormLabel{
+.form__input:focus + .form__label{
     transform: translateY(-12px) scale(.7);
     transform-origin: left top;
 }
 
-.FormLabel{
+.form__label{
    color:  var(black);
    position:absolute;   
    transform: translateY(-12px); 
   
 }
-.Select{
+.select{
   text-align: center;
   margin: 5%;
 }
